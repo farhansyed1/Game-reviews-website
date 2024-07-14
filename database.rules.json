@@ -1,0 +1,20 @@
+{
+  "rules": {
+    "games": {
+      ".read": true,
+      "$game_id": {
+        "reviews": {
+          "$uid": {
+            ".write": "auth !== null && auth.uid === $uid"
+          }
+        }
+      }
+    },
+    "users": {
+      ".read": true,
+      "$uid": {
+        ".write": "auth !== null && auth.uid === $uid"
+      }
+    }
+  }
+}
